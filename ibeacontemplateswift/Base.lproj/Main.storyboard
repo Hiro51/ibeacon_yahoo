@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="iBeaconTemplateSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pKC-UA-uel">
+                                <rect key="frame" x="0.0" y="169" width="600" height="431"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="vYV-OS-HCw"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="1EA-7r-aNF"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5N-vd-aoa">
+                                <rect key="frame" x="280" y="113" width="40" height="30"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reset:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="5Pc-oV-xK5"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXl-Vq-yW1">
+                                <rect key="frame" x="236" y="52" width="129" height="40"/>
+                                <color key="backgroundColor" red="0.69848494179999998" green="0.85653398780000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Wjt-Am-9a7"/>
+                                    <constraint firstAttribute="width" constant="129" id="lQY-5o-nal"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="LGO-uh-TXy"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="iXl-Vq-yW1" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="32" id="5cI-MQ-DZx"/>
+                            <constraint firstItem="o5N-vd-aoa" firstAttribute="top" secondItem="iXl-Vq-yW1" secondAttribute="bottom" constant="21" id="CVJ-hE-IlM"/>
+                            <constraint firstItem="pKC-UA-uel" firstAttribute="leading" secondItem="2fi-mo-0CV" secondAttribute="leading" id="QbS-Zv-G4t"/>
+                            <constraint firstItem="pKC-UA-uel" firstAttribute="top" secondItem="o5N-vd-aoa" secondAttribute="bottom" constant="26" id="SnY-SU-8mM"/>
+                            <constraint firstItem="iXl-Vq-yW1" firstAttribute="centerX" secondItem="o5N-vd-aoa" secondAttribute="centerX" id="lmt-wb-G6y"/>
+                            <constraint firstItem="pKC-UA-uel" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="orh-4c-9wU"/>
+                            <constraint firstItem="pKC-UA-uel" firstAttribute="centerX" secondItem="o5N-vd-aoa" secondAttribute="centerX" id="tMO-bg-PlH"/>
+                            <constraint firstItem="pKC-UA-uel" firstAttribute="trailing" secondItem="2fi-mo-0CV" secondAttribute="trailing" id="x73-tx-wQF"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ePW-XA-0Na" appends="YES" id="GIl-Ay-dPD"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="pointview" destination="iXl-Vq-yW1" id="JRL-BS-MiU"/>
+                        <outlet property="tableView" destination="pKC-UA-uel" id="vqi-yw-Bc9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ePW-XA-0Na">
+                    <connections>
+                        <action selector="viewTapped:" destination="vXZ-lx-hvc" id="PZ5-Oc-IqT"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+</document>
